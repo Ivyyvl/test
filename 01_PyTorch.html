@@ -1,0 +1,256 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>1. Installing PyTorch on Windows &#8212; PyTorch Installation Guide 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to PyTorch documentation!" href="main.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="installing-pytorch-on-windows">
+<h1>1. Installing PyTorch on Windows<a class="headerlink" href="#installing-pytorch-on-windows" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="prerequisites">
+<h2>1.1. Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="#win-distr"><span class="std std-ref">Supported Windows Distributions</span></a></li>
+<li><a class="reference internal" href="#sec-python"><span class="std std-ref">Python</span></a></li>
+<li><a class="reference internal" href="#package-manager"><span class="std std-ref">Package Manager</span></a></li>
+</ul>
+<div class="section" id="supported-windows-distributions">
+<span id="win-distr"></span><h3>1.1.1. Supported Windows Distributions<a class="headerlink" href="#supported-windows-distributions" title="Permalink to this headline">¶</a></h3>
+<p>PyTorch is supported on the following Windows distributions:</p>
+<ul>
+<li><p class="first">Windows 7 and greater</p>
+<p>Windows 10 or greater is recommended.</p>
+</li>
+<li><p class="first">Windows Server 2008 r2 and greater</p>
+</li>
+</ul>
+</div>
+<div class="section" id="python">
+<span id="sec-python"></span><h3>1.1.2. Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h3>
+<p>Currently, PyTorch on Windows only supports Python 3.x; Python 2.x is not supported.</p>
+<p>As Python is not installed by default on Windows, there are multiple ways to install Python:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://chocolatey.org/">Chocolatey</a></li>
+<li><a class="reference external" href="https://www.python.org/downloads/windows/">Python website</a></li>
+<li><a class="reference external" href="https://www.anaconda.com/distribution/#windows">Anaconda</a></li>
+</ul>
+</div>
+<div class="section" id="package-manager">
+<span id="id1"></span><h3>1.1.3. Package Manager<a class="headerlink" href="#package-manager" title="Permalink to this headline">¶</a></h3>
+<p>To install the PyTorch binaries, use at least one of the following two supported package managers:</p>
+<ul class="simple">
+<li><a class="reference internal" href="#anaconda1"><span class="std std-ref">Anaconda</span></a></li>
+<li><a class="reference internal" href="#pip"><span class="std std-ref">pip</span></a></li>
+</ul>
+<div class="section" id="anaconda1">
+<span id="id2"></span><h4>1.1.3.1. Anaconda<a class="headerlink" href="#anaconda1" title="Permalink to this headline">¶</a></h4>
+<p>Anaconda is the recommended package manager,  because it provides all of the PyTorch dependencies in one, sandboxed install, including Python and pip.</p>
+<p>To install Anaconda, use the <a class="reference external" href="https://www.anaconda.com/distribution/#windows">64-bit graphical installer</a> for PyTorch 3.x. Click the installer link and select Run. Anaconda will be downloaded and the installer prompt will be presented to you. The default options are generally sane.</p>
+</div>
+<div class="section" id="pip">
+<span id="id3"></span><h4>1.1.3.2. pip<a class="headerlink" href="#pip" title="Permalink to this headline">¶</a></h4>
+<p>If you installed Python by any of the recommended ways mentioned in <a class="reference internal" href="#sec-python"><span class="std std-ref">Python</span></a>, pip will have already been installed for you.</p>
+</div>
+</div>
+</div>
+<div class="section" id="installing-pytorch">
+<h2>1.2. Installing PyTorch<a class="headerlink" href="#installing-pytorch" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="installing-pytorch-through-anaconda">
+<h3>1.2.1. Installing PyTorch through Anaconda<a class="headerlink" href="#installing-pytorch-through-anaconda" title="Permalink to this headline">¶</a></h3>
+<p>To install PyTorch with Anaconda, follow these steps:</p>
+<ol class="arabic">
+<li><p class="first">Open an Anaconda prompt via Start | Anaconda3 | Anaconda Prompt.</p>
+</li>
+<li><p class="first">Run the command to install the desired PyTorch.</p>
+<ul>
+<li><p class="first">If you do not have a CUDA-capable system or do not require CUDA, run the following command:</p>
+<div class="highlight-c"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">pytorch</span> <span class="n">torchvision</span> <span class="n">cpuonly</span> <span class="o">-</span><span class="n">c</span> <span class="n">pytorch</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">If you have a CUDA-capable system, choose to run the command that suits you:</p>
+<ul>
+<li><p class="first">For CUDA 9.2:</p>
+<div class="highlight-c"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">pytorch</span> <span class="n">torchvision</span> <span class="n">cudatoolkit</span><span class="o">=</span><span class="mf">9.2</span> <span class="o">-</span><span class="n">c</span> <span class="n">pytorch</span> <span class="o">-</span><span class="n">c</span> <span class="n">defaults</span> <span class="o">-</span><span class="n">c</span> <span class="n">numba</span><span class="o">/</span><span class="n">label</span><span class="o">/</span><span class="n">dev</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">For CUDA 10.1</p>
+<div class="highlight-c"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">pytorch</span> <span class="n">torchvision</span> <span class="n">cudatoolkit</span><span class="o">=</span><span class="mf">10.1</span> <span class="o">-</span><span class="n">c</span> <span class="n">pytorch</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+<div class="figure align-center" id="id4">
+<span id="fig-error"></span><a class="reference internal image-reference" href="_images/HTTPError.png"><img alt="_images/HTTPError.png" src="_images/HTTPError.png" style="width: 945.5999999999999px; height: 499.2px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 1.1 </span><span class="caption-text">Example of HTTP Error</span></p>
+</div>
+<p>If you get an HTTP error like shown in <a class="reference internal" href="#fig-error"><span class="std std-numref">Fig. 1.1</span></a>, you may retry running the command. Optionally, use Tsinghua Tuna mirrors by following these steps:</p>
+<ol class="loweralpha">
+<li><p class="first">In the Anaconda Prompt, run the following commands:</p>
+<div class="highlight-c"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">add</span> <span class="n">channels</span> <span class="nl">http</span><span class="p">:</span><span class="c1">//mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span>
+<span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">add</span> <span class="n">channels</span> <span class="nl">http</span><span class="p">:</span><span class="c1">//mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/</span>
+<span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">set</span> <span class="n">show_channel_urls</span> <span class="n">yes</span>
+<span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">add</span> <span class="n">channels</span> <span class="nl">http</span><span class="p">:</span><span class="c1">//mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/</span>
+<span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">add</span> <span class="n">channels</span> <span class="nl">http</span><span class="p">:</span><span class="c1">//mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/</span>
+<span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">add</span> <span class="n">channels</span> <span class="nl">http</span><span class="p">:</span><span class="c1">//mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/msys2/</span>
+<span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">add</span> <span class="n">channels</span> <span class="nl">http</span><span class="p">:</span><span class="c1">//mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/menpo/</span>
+<span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">add</span> <span class="n">channels</span> <span class="nl">http</span><span class="p">:</span><span class="c1">//mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/bioconda/</span>
+<span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">add</span> <span class="n">channels</span> <span class="nl">http</span><span class="p">:</span><span class="c1">//mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/peterjc123/</span>
+<span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">add</span> <span class="n">channels</span> <span class="nl">http</span><span class="p">:</span><span class="c1">//mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Pay attention to <code class="docutils literal"><span class="pre">http</span></code>. If you mistakenly type <code class="docutils literal"><span class="pre">https</span></code>, HTTP errors occur, too.</p>
+</div>
+</li>
+<li><p class="first">Go to <code class="docutils literal"><span class="pre">C:\Users\&lt;your</span> <span class="pre">user</span> <span class="pre">name&gt;</span></code>, open the <code class="docutils literal"><span class="pre">.condarc</span></code> file with a text editor, remove the <code class="docutils literal"><span class="pre">-</span> <span class="pre">defaults</span></code> line, and save the file.</p>
+</li>
+<li><p class="first">In the Anaconda Prompt, run the command in Step 2 but remember to remove <code class="docutils literal"><span class="pre">-c</span> <span class="pre">pytorch</span></code> from the command line.</p>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="section" id="installing-pytorch-through-pip">
+<h3>1.2.2. Installing PyTorch through Pip<a class="headerlink" href="#installing-pytorch-through-pip" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="verifying-installation">
+<h2>1.3. Verifying Installation<a class="headerlink" href="#verifying-installation" title="Permalink to this headline">¶</a></h2>
+<p>To verify that you have successfully installed the desired PyTorch, run sample PyTorch code to construct a randomly initialized tensor.</p>
+<ol class="arabic">
+<li><p class="first">In the Anaconda Prompt, type:</p>
+<div class="highlight-c"><div class="highlight"><pre><span></span><span class="n">python</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Enter the following code:</p>
+<div class="highlight-c"><div class="highlight"><pre><span></span><span class="n">from</span> <span class="n">__future__</span> <span class="n">import</span> <span class="n">print_function</span>
+<span class="n">import</span> <span class="n">torch</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>The output is shown in <a class="reference internal" href="#fig-tensor"><span class="std std-numref">Fig. 1.2</span></a>.</p>
+<div class="figure align-center" id="id5">
+<span id="fig-tensor"></span><a class="reference internal image-reference" href="_images/Tensor.png"><img alt="_images/Tensor.png" src="_images/Tensor.png" style="width: 1683.5px; height: 556.5px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 1.2 </span><span class="caption-text">Output of Sample Code</span></p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="main.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">1. Installing PyTorch on Windows</a><ul>
+<li><a class="reference internal" href="#prerequisites">1.1. Prerequisites</a><ul>
+<li><a class="reference internal" href="#supported-windows-distributions">1.1.1. Supported Windows Distributions</a></li>
+<li><a class="reference internal" href="#python">1.1.2. Python</a></li>
+<li><a class="reference internal" href="#package-manager">1.1.3. Package Manager</a><ul>
+<li><a class="reference internal" href="#anaconda1">1.1.3.1. Anaconda</a></li>
+<li><a class="reference internal" href="#pip">1.1.3.2. pip</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#installing-pytorch">1.2. Installing PyTorch</a><ul>
+<li><a class="reference internal" href="#installing-pytorch-through-anaconda">1.2.1. Installing PyTorch through Anaconda</a></li>
+<li><a class="reference internal" href="#installing-pytorch-through-pip">1.2.2. Installing PyTorch through Pip</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#verifying-installation">1.3. Verifying Installation</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="main.html">Documentation overview</a><ul>
+      <li>Previous: <a href="main.html" title="previous chapter">Welcome to PyTorch documentation!</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/01_PyTorch.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, xxx Company.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/01_PyTorch.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
