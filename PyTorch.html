@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Windows 系统</title>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        
+    </head>
+    <body class="vscode-light">
+        <h1 id="%e5%a6%82%e4%bd%95%e5%9c%a8-windows-%e7%b3%bb%e7%bb%9f%e4%b8%8a%e5%ae%89%e8%a3%85-pytorch">如何在 Windows 系统上安装 PyTorch</h1>
+<ul>
+<li><a href="#%e5%a6%82%e4%bd%95%e5%9c%a8-windows-%e7%b3%bb%e7%bb%9f%e4%b8%8a%e5%ae%89%e8%a3%85-pytorch">如何在 Windows 系统上安装 PyTorch</a>
+<ul>
+<li><a href="#%e5%89%8d%e6%8f%90%e6%9d%a1%e4%bb%b6">前提条件</a>
+<ul>
+<li><a href="#windows-%e7%b3%bb%e7%bb%9f">Windows 系统</a></li>
+<li><a href="#python">Python</a></li>
+<li><a href="#%e8%bd%af%e4%bb%b6%e5%8c%85%e7%ae%a1%e7%90%86%e5%99%a8">软件包管理器</a>
+<ul>
+<li><a href="#anaconda">Anaconda</a></li>
+<li><a href="#pip">pip</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#pytorch-%e5%ae%89%e8%a3%85%e6%ad%a5%e9%aa%a4">PyTorch 安装步骤</a>
+<ul>
+<li><a href="#%e4%bd%bf%e7%94%a8-anaconda-%e5%ae%89%e8%a3%85-pytorch">使用 Anaconda 安装 PyTorch</a></li>
+<li><a href="#%e4%bd%bf%e7%94%a8-pip-%e5%ae%89%e8%a3%85-pytorch">使用 pip 安装 PyTorch</a></li>
+</ul>
+</li>
+<li><a href="#%e9%aa%8c%e8%af%81">验证</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="%e5%89%8d%e6%8f%90%e6%9d%a1%e4%bb%b6">前提条件</h2>
+<h3 id="windows-%e7%b3%bb%e7%bb%9f">Windows 系统</h3>
+<p>PyTorch 支持在以下 Window 系统上进行安装：</p>
+<ul>
+<li>
+<p>Windows 7 及以上版本</p>
+<p>推荐 Windows 10 及以上版本。</p>
+</li>
+<li>
+<p>Windows Server 2008 r2 及以上版本</p>
+</li>
+</ul>
+<h3 id="python">Python</h3>
+<p>目前在 Windows 系统下安装 PyTorch 仅支持 Python 3.x 版本; Python 2.x 版本不支持。</p>
+<p>由于 Windows 默认情况下并不安装 Python，您可以通过以下几种方式安装 Python：</p>
+<ul>
+<li><a href="https://chocolatey.org/">Chocolatey</a></li>
+<li><a href="https://www.python.org/downloads/windows/">Python官方网站</a></li>
+<li><a href="https://www.anaconda.com/distribution/#windows">Anaconda</a></li>
+</ul>
+<h3 id="%e8%bd%af%e4%bb%b6%e5%8c%85%e7%ae%a1%e7%90%86%e5%99%a8">软件包管理器</h3>
+<p>安装 PyTorch binaries，需要使用软件包管理器。以下是 2 种支持的软件包管理器，您可以选择其中一种：</p>
+<ul>
+<li>
+<p>Anaconda</p>
+<p>推荐使用 Anaconda，因为 Anaconda 提供了 PyTorch 的所有依赖关系，包括 Python 和 pip。</p>
+</li>
+<li>
+<p>pip</p>
+</li>
+</ul>
+<h4 id="anaconda">Anaconda</h4>
+<p>使用支持 PyTorch 3.x 的 <a href="https://www.anaconda.com/distribution/#windows">64 位图形化安装程序</a>，安装 Anaconda。点击安装程序链接，选择【运行】开始下载 Anaconda。下载完成后会自动弹出安装程序界面。选择默认方式进行安装即可。</p>
+<h4 id="pip">pip</h4>
+<p>如果您已使用上述任一推荐方式安装了 Python，pip 将已经安装在了您的电脑上。</p>
+<h2 id="pytorch-%e5%ae%89%e8%a3%85%e6%ad%a5%e9%aa%a4">PyTorch 安装步骤</h2>
+<h3 id="%e4%bd%bf%e7%94%a8-anaconda-%e5%ae%89%e8%a3%85-pytorch">使用 Anaconda 安装 PyTorch</h3>
+<p>按照如下步骤，使用 Anaconda 安装 PyTorch。</p>
+<ol>
+<li>
+<p>点击电脑左下端的【开始】，选择【Anaconda3】，点击【Anaconda Prompt】打开 Anaconda Prompt 界面。</p>
+</li>
+<li>
+<p>在 Ananconda Prompt 界面输入安装命令。</p>
+<p>您可以根据您的需求，选择是否安装是否支持 CUDA 功能的 PyTorch。</p>
+<ul>
+<li>
+<p>如果您的系统不支持 CUDA 的功能或者您不需要支持 CUDA 的功能，请输入以下命令：</p>
+<pre><code>conda install pytorch torchvision cpuonly -c pytorch
+</code></pre>
+</li>
+<li>
+<p>如果您的系统支持 CUDA 的功能，请根据需求输入命令：</p>
+<ul>
+<li>
+<p>针对 CUDA 9.2：</p>
+<pre><code>conda install pytorch torchvision cudatoolkit=9.2 -c pytorch -c defaults -c numba/label/dev
+</code></pre>
+</li>
+<li>
+<p>针对 CUDA 10.1</p>
+<pre><code>conda install pytorch torchvision cudatoolkit=10.1 -c pytorch
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<p>如果您在输入安装命令后，出现 HTTP 错误， 尝试重新输入运行安装的命令。 或者，您可以使用清华镜像。您可以按以下步骤使用清华镜像进行安装。</p>
+<p>a. 在 Anaconda Prompt 界面，输入以下命令：</p>
+<pre><code>   conda config --add channels http://mirrors.tuna. tsinghua.edu.cn/anaconda/pkgs/free/
+   conda config --add channels http://mirrors.tuna. tsinghua.edu.cn/anaconda/pkgs/main/
+   conda config --set show_channel_urls yes
+   conda config --add channels http://mirrors.tuna. tsinghua.edu.cn/anaconda/cloud/pytorch/
+   conda config --add channels http://mirrors.tuna. tsinghua.edu.cn/anaconda/cloud/conda-forge/
+   conda config --add channels http://mirrors.tuna. tsinghua.edu.cn/anaconda/cloud/msys2/
+   conda config --add channels http://mirrors.tuna. tsinghua.edu.cn/anaconda/cloud/menpo/
+   conda config --add channels http://mirrors.tuna. tsinghua.edu.cn/anaconda/cloud/bioconda/
+   conda config --add channels http://mirrors.tuna. tsinghua.edu.cn/anaconda/cloud/peterjc123/
+   conda config --add channels http://mirrors.tuna. tsinghua.edu.cn/anaconda/cloud/pytorch/
+</code></pre>
+<p>注意：链接中是 <code>http</code>，不是 <code>https</code>。如果您不小心输入了 <code>https</code>，同样也会得到 HTTP 错误的报错。</p>
+<p>b. 进入以下路径 <code>C:\Users\&lt;your user name&gt;</code>，用任一文本编辑器打开 <code>.condarc</code> 文件， 删除 <code>- defaults</code>所在代码行并保存更新后的文件。</p>
+<p>c. 在 Anaconda Prompt 界面，输入步骤 2 运行的命令并将 <code>-c pytorch</code> 从命令中删除。</p>
+</li>
+</ol>
+<h3 id="%e4%bd%bf%e7%94%a8-pip-%e5%ae%89%e8%a3%85-pytorch">使用 pip 安装 PyTorch</h3>
+<h2 id="%e9%aa%8c%e8%af%81">验证</h2>
+<p>运行代码样例，验证 PyTorch 是否安装成功。如下提供的代码样例用于构建一个随机初始化的张量。</p>
+<ol>
+<li>
+<p>在 Anaconda Prompt 界面，输入：</p>
+<pre><code>python
+</code></pre>
+</li>
+<li>
+<p>继续输入如下代码样例:</p>
+<pre><code>from __future__ import print_function
+import torch
+x = torch.rand(5， 3)
+print(x)
+</code></pre>
+</li>
+</ol>
+<p>正确的输出结果类似如下:</p>
+<pre><code>tensor([[0.3380， 0.3845， 0.3217]，
+        [0.8337， 0.9050， 0.2650]，
+        [0.2979， 0.7141， 0.9069]，
+        [0.1449， 0.1132， 0.1375]，
+        [0.4675， 0.3947， 0.1426]])
+</code></pre>
+
+    </body>
+    </html>
